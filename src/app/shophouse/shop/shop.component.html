@@ -1,0 +1,36 @@
+<div>
+  <h1 class="categoryTitle">Shop by Category</h1>
+  <div class="categories flex flex-row py-12 px-5 mx-5">
+    <button
+      class="category"
+      *ngFor="let button of categoryButtons"
+      [ngClass]="{ active: button.isClicked }"
+      (click)="getProductsByCategory(button.text, button)"
+    >
+      {{ button.text }}
+    </button>
+  </div>
+
+  <div class="product-container">
+    <ng-container *ngFor="let product of product$ | async">
+      <div class="card">
+        <a
+          href="#"
+          class="hover:text-orangeLight"
+          [routerLink]="['/products', product.id]"
+          >See details</a
+        >
+        <img [src]="product.image" alt="" class="w-52 h-64 m-auto" />
+        <h1 class="product-title text-xl font-bold">{{ product.title }}</h1>
+        <p class="price text-xl">$ {{ product.price }} USD</p>
+
+        <p class="description hidden">{{ product.description }}</p>
+        <p class="rating text-xl">
+          {{ product.rating.rate }}
+          <span role="img" aria-label="star">⭐</span>
+          {{ product.rating.count }} ratings
+        </p>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="m-5">
+  <h1 class="text-3xl font-bold text-center m-5">Welcome to SHOP House!</h1>
+  <form
+    class="flex flex-col border-2 w-96 h-96 m-auto items-center"
+    (ngSubmit)="logIn()"
+  >
+    <h1 class="text-center text-xl text-orangeLight font-bold p-5">Login</h1>
+    <input
+      class="formelements"
+      type="text"
+      name="username"
+      placeholder="Username"
+      id="username"
+      [(ngModel)]="username"
+    />
+    <input
+      class="formelements"
+      name="password"
+      type="password"
+      placeholder="Password"
+      id="password"
+      [(ngModel)]="password"
+    />
+    <button
+      class="sm:px-3 sm:mx-3 m-4 md:text-lg px-12 py-2 text-white font-semibold bg-orangeLight rounded-full baseline hover:bg-lightGray hover:text-orangeLight"
+    >
+      Log in
+    </button>
+    <hr style="width: 80%; text-align: left; margin-left: 0" />
+    <h1>New to SHOP House?</h1>
+    <button
+      class="sm:px-3 sm:mx-3 m-4 md:text-l px-12 py-2 text-orangeLight font-semibold bg-lightGray rounded-full baseline hover:bg-lightGray hover:text-gray-400"
+    >
+      Create your SHOP House account
+    </button>
+  </form>
+</div>
+<ng-container *ngIf="authToken$ | async as token">
+  <h1>{{ token }}</h1></ng-container
+>

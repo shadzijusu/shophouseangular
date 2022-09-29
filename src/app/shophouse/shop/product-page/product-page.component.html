@@ -1,0 +1,25 @@
+<div class="flex h-full w-full pl-48">
+  <ng-container *ngIf="product$ | async as product">
+    <div class="product">
+      <img [src]="product.image" alt="" class="w-52 h-64 m-auto" />
+      <h1 class="product-title text-xl font-bold">{{ product.title }}</h1>
+      <p class="price text-xl">$ {{ product.price }} USD</p>
+
+      <p class="description">{{ product.description }}</p>
+      <p class="rating text-xl">
+        {{ product.rating.rate }}
+        <span role="img" aria-label="star">⭐</span>
+        {{ product.rating.count }} ratings
+      </p>
+    </div>
+    <div class="box">
+      <p class="text-orangeLight text-xl font-bold p-5">Quantity</p>
+      <div class="quantity">
+        <button class="quantifiers" (click)="decreaseQuantity()">-</button>
+        <span class="m-5">{{ quantity }}</span>
+        <button class="quantifiers" (click)="increaseQuantity()">+</button>
+      </div>
+      <button class="add" (click)="addToCart()">Add to cart</button>
+    </div>
+  </ng-container>
+</div>

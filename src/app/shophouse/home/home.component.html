@@ -1,0 +1,59 @@
+<!--Main-->
+<div id="hero" class="bg-shopping bg-cover md:h-screen p-10">
+  <h1
+    class="sm:w-64 md:w-auto text-4xl text-left font-bold md:p-10 md:text-7xl"
+  >
+    Find it, love it, buy it.
+  </h1>
+  <p
+    class="text-left text-lg sm:pb-5 md:text-4xl pt-5 md:pl-10 md:pt-0 md:pb-16"
+  >
+    A few clicks is all it takes.
+  </p>
+  <a
+    href="#"
+    routerLink="/shop"
+    class="sm:px-3 sm:mx-3 md:mx-10 p-3 md:px-6 md:text-lg pt-2 text-white font-semibold bg-orangeLight rounded-full baseline hover:bg-lightGray hover:text-orangeLight"
+  >
+    Shop Collection
+  </a>
+</div>
+<!--Categories-->
+
+<div
+  class="flex flex-col items-center px-6 mx-auto mt-10 space-y-5 md:space-y-0 md:space-x-10 md:flex-row"
+>
+  <ng-container *ngFor="let button of categoryButtons">
+    <div class="bg-seashell p-5 sm:w-64 md:w-3/12 text-center">
+      <h2 class="text-lg font-bold p-3">{{ button.text }}</h2>
+      <a
+        class="text-gray-400 hover:text-orangeLight"
+        [routerLink]="['/shop', button.text | lowercase]"
+        >Shop Category</a
+      >
+    </div>
+  </ng-container>
+</div>
+
+<section id="best-products">
+  <h1 class="text-4xl font-bold text-orangeLight text-center pt-7 pb-4">
+    Popular products
+  </h1>
+  <div class="flex flex-col items-center">
+    <ng-container *ngFor="let product of popularProduct$ | async">
+      <div
+        class="w-3/4 h-2/3 m-4 flex flex-col border rounded-lg border-pearl p-4 text-center"
+      >
+        <a
+          href="#"
+          class="hover:text-orangeLight text-xl text-left"
+          [routerLink]="['/products', product.id]"
+          >See details</a
+        >
+        <img [src]="product.image" class="w-1/3 m-auto" alt="" />
+        <h1 class="text-2xl font-bold p-5">{{ product.title }}</h1>
+        <p class="text-xl text-orangeLight">$ {{ product.price }} USD</p>
+      </div>
+    </ng-container>
+  </div>
+</section>

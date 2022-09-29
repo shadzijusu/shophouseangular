@@ -1,0 +1,47 @@
+<nav class="bg-lightGray">
+  <div class="container flex items-center justify-between">
+    <div>
+      <img
+        src="../../../../assets/images/logo.png"
+        class="sm:w-40 md:w-64 hover:cursor-pointer"
+        alt=""
+        routerLink="/home"
+      />
+    </div>
+    <div class="hidden md:flex space-x-6 justify-start text-2xl">
+      <a
+        routerLink="/home"
+        class="hover:text-orangeLight"
+        routerLinkActive="linkactive"
+        >Home</a
+      >
+      <a
+        routerLink="/shop"
+        class="hover:text-orangeLight"
+        target="_parent"
+        routerLinkActive="linkactive"
+        >Shop</a
+      >
+      <a
+        routerLink="/about"
+        class="hover:text-orangeLight"
+        routerLinkActive="linkactive"
+        >About</a
+      >
+      <a
+        href="#"
+        class="hover:text-orangeLight"
+        routerLinkActive="linkactive"
+        routerLink="/profile"
+        >Profile</a
+      >
+    </div>
+
+    <div
+      class="hidden md:flex p-3 px-6 pt-2 text-white bg-orangeLight rounded-full baseline hover:text-lightGray"
+    >
+      <app-cart-icon routerLink="/cart"></app-cart-icon>
+      <a href="#"> 1 ($29.99) </a>
+    </div>
+  </div>
+</nav>
