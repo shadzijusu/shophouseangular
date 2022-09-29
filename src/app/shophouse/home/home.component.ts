@@ -1,6 +1,6 @@
 import { filter, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { Product } from 'src/app/core/models/Product';
+import { Product } from 'src/app/core/models/Product.model';
 import { ProductService } from 'src/app/core/services/ProductService.service';
 
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';

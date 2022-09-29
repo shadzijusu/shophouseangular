@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Product } from '../models/Product';
+import { Product } from '../models/Product.model';
 
 @Injectable({providedIn: 'root'})
 export class ProductService {
@@ -23,8 +23,6 @@ export class ProductService {
     getProductById(id: number) : Observable<Product>{
         return this.http.get<Product>(`https://fakestoreapi.com/products/${id}`);
     }
-    getCartProductsForUser(id: number) : Observable<Product[]> {
-        return this.http.get<Product[]>(`https://fakestoreapi.com/carts/user/${id}`);
-    }
+  
 
 }

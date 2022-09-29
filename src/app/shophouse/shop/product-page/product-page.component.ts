@@ -1,5 +1,5 @@
 import { map, Observable, tap } from 'rxjs';
-import { Product } from 'src/app/core/models/Product';
+import { Product } from 'src/app/core/models/Product.model';
 import { ProductService } from 'src/app/core/services/ProductService.service';
 
 import { Component, OnInit } from '@angular/core';
