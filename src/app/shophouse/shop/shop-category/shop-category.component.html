@@ -1,8 +1,8 @@
 <div>
   <h1 class="categoryTitle">Shop by Category</h1>
-  <div class="categories flex flex-row py-12 px-5 mx-5">
+  <div class="categories md:flex md:flex-row py-12 px-5 mx-5 sm:flex-col">
     <button
-      class="category"
+      class="category sm:m-2"
       *ngFor="let button of categoryButtons"
       [ngClass]="{ active: button.isClicked }"
       (click)="getProductsByCategory(button.text, button)"
@@ -11,7 +11,7 @@
     </button>
   </div>
 
-  <div class="product-container">
+  <div class="product-container md:grid-cols-3 sm:grid-cols-1">
     <ng-container *ngFor="let product of product$ | async">
       <div class="card">
         <a
