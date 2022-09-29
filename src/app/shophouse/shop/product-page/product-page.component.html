@@ -19,7 +19,9 @@
         <span class="m-5">{{ quantity }}</span>
         <button class="quantifiers" (click)="increaseQuantity()">+</button>
       </div>
-      <button class="add" (click)="addToCart()">Add to cart</button>
+      <button class="add" (click)="addToCart(product.id, quantity)">
+        Add to cart
+      </button>
     </div>
   </ng-container>
 </div>

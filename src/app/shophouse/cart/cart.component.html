@@ -1,8 +1,8 @@
-<div>
+<div class="flex">
   <div class="block">
-    <ng-container *ngFor="let product of product$ | async">
+    <ng-container *ngFor="let product of products">
       <div
-        class="w-2/4 h-2/3 m-4 flex flex-col border rounded-lg border-pearl p-4 text-center"
+        class="w-4/5 h-11/12 m-6 flex flex-col border rounded-lg border-pearl p-4 text-center"
       >
         <a
           href="#"
@@ -16,9 +16,12 @@
         <hr />
         <div class="p-5">
           <div>
-            <span class="text-orangeLight text-lg">Qty: </span>
+            <span class="text-orangeLight text-lg"
+              >Qty: {{ getQuantity(product.id) }}</span
+            >
           </div>
           <button
+            (click)="deleteProduct(product.id, product.price)"
             class="sm:px-3 sm:mx-3 m-4 md:text-m px-12 py-2 text-white font-semibold bg-orangeLight rounded-full baseline hover:bg-lightGray hover:text-orangeLight"
           >
             Delete product
@@ -26,5 +29,11 @@
         </div>
       </div>
     </ng-container>
+  </div>
+  <div class="total h-full mb-72">
+    <h1 class="text-orangeLight text-xl font-bold p-5">
+      Subtotal ${{ getTotal() }}
+    </h1>
+    <button class="done">Proceed to checkout</button>
   </div>
 </div>

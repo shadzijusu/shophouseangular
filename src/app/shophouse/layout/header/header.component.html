@@ -38,10 +38,10 @@
     </div>
 
     <div
-      class="hidden md:flex p-3 px-6 pt-2 text-white bg-orangeLight rounded-full baseline hover:text-lightGray"
+      class="hidden md:flex p-3 px-6 pt-2 text-white bg-orangeLight rounded-full baseline"
     >
       <app-cart-icon routerLink="/cart"></app-cart-icon>
-      <a href="#"> 1 ($29.99) </a>
+      <p href="#">{{ numberOfProducts }} (${{ total | number: "1.2-2" }})</p>
     </div>
   </div>
 </nav>

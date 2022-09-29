@@ -135,3 +135,27 @@
   border-width: 2px;
   border-color: var(--orangeLight);
 }
+.total {
+  background-color: seashell;
+  width: 350px;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-right: 40px;
+
+  text-align: center;
+  padding: 30px;
+}
+.done {
+  width: 200px;
+  height: 40px;
+  border-radius: 15px;
+  border-width: 0px;
+  background-color: #ea8465;
+  color: white;
+}
+.done:hover {
+  color: black;
+}
+.done {
+  cursor: pointer;
+}
