@@ -7,14 +7,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
   username: string = ""
   password: string = ""
   authToken$ : any 
   constructor(private accountService : AccountService) { }
-
-  ngOnInit(): void {
-  }
   logIn() {
     this.authToken$ = this.accountService.getAuthToken(this.username, this.password);
   }
