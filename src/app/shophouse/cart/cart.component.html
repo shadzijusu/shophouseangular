@@ -1,20 +1,16 @@
-<div class="flex sm:flex-col">
+<div class="flex">
   <div class="block">
     <ng-container *ngFor="let product of products">
       <div
-        class="w-4/5 h-11/12 m-6 flex flex-col border rounded-lg border-pearl p-4 text-center sm:w-11/12"
+        class="w-4/5 h-11/12 m-6 flex flex-col border rounded-lg border-pearl p-4 text-center"
       >
         <a
           href="#"
-          class="hover:text-orangeLight text-xl text-left sm:text-lg"
+          class="hover:text-orangeLight text-xl text-left"
           [routerLink]="['/products', product.id]"
           >See details</a
         >
-        <img
-          [src]="product.image"
-          class="md:w-1/3 m-auto sm:w-10/12 sm:m-5"
-          alt=""
-        />
+        <img [src]="product.image" class="w-1/3 m-auto" alt="" />
         <h1 class="text-2xl font-bold p-5">{{ product.title }}</h1>
         <p class="text-xl text-orangeLight p-5">$ {{ product.price }} USD</p>
         <hr />
@@ -26,7 +22,7 @@
           </div>
           <button
             (click)="deleteProduct(product.id, product.price)"
-            class="sm:px-3 sm:mx-3 m-4 md:text-m px-12 py-2 text-white font-semibold bg-orangeLight rounded-full baseline hover:bg-lightGray hover:text-orangeLight"
+            class="m-4 text-m px-12 py-2 text-white font-semibold bg-orangeLight rounded-full baseline hover:bg-lightGray hover:text-orangeLight"
           >
             Delete product
           </button>
@@ -34,9 +30,9 @@
       </div>
     </ng-container>
   </div>
-  <div class="total h-full mb-72 sm:m-auto sm:mb-6">
+  <div class="total h-full mb-72">
     <h1 class="text-orangeLight text-xl font-bold p-5">
-      Subtotal ${{ getTotal() }}
+      Subtotal ${{ getTotal() | number: "1.2-2" }}
     </h1>
     <button class="done">Proceed to checkout</button>
   </div>
