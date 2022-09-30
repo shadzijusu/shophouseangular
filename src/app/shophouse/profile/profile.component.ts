@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit {
   }
   logIn() {
     this.authToken$ = this.accountService.getAuthToken(this.username, this.password);
-    console.log(this.authToken$);
   }
 
 }

@@ -8,12 +8,7 @@ export class AccountService {
     constructor(private http: HttpClient) {}
 
     getAuthToken(username: string, password: string) : Observable<any>{
-        let params = new HttpParams().append('username', username).append('password', password);
-        let headers = new HttpHeaders().append('Access-Control-Allow-Origin', '*')
-        console.log(params)
-        console.log(headers)
-        return this.http.post(`https://fakestoreapi.com/auth/login`, {params, headers})
-
+        return this.http.post(`https://fakestoreapi.com/auth/login`, {username, password})
     }
     
 }
